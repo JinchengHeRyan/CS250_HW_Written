@@ -44,11 +44,25 @@
 
 \title{CS 250 - Computer Architecture \\ Homework 2 Written}
 \author{Jincheng He Email: jincheng.he@dukekunshan.edu.cn}
-%\date{October 2019}
+\date{October 11, 2021}
 
 \begin{document}
 
     \maketitle
+
+
+    \section{Q1 MIPS Instruction Set}
+    \begin{enumerate}
+        \item[(a)] What MIPS instruction is this? 0x022a4822
+
+        The binary representation is: 0000 0010 0010 1010 0100 1000 0010 0010. So it should be 000000 10001 01010 01001 00000 100010. So Rs is \$s1, Rt is \$t2, Rd is \$t1.
+        Based on Sh and Func, we can know it is sub.
+
+        So the MIPS instrunction should be: sub \$t1, \$s1, \$t3.
+        \item[(b)] What is the binary representation of this instruction lw \$t0, 8(\$t2)?
+
+        The binary should be 100011 Rs Rt Immed. Rs is \$t2, which is 01010, Rt is \$t0, which is 01000, Immed is 8, which is 0000000000001000. So the binary representation should be: 100011 01010 01000 0000000000001000.
+    \end{enumerate}
 
 
 \end{document}
