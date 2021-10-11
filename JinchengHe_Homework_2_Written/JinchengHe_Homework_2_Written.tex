@@ -65,4 +65,29 @@
     \end{enumerate}
 
 
+    \section{Q2. C compilation and MIPS assembly language}
+    \begin{enumerate}
+        \item[(a)] How many total instructions are in each of the two versions?
+
+        For the version of -O0, there are 57 instructions in total.
+
+        For the version of -O3, there are 32 instructions in total.
+        \item[(b)] How many memory accesses (loads and stores) are in each of the two versions?
+
+        For the version of -O0, there are 7 load words and 3 store words.
+
+        For the version of -O3, there are 2 load words and 2 store words.
+        \item[(c)] Which version of the code uses more registers?
+
+        The version of -O3 uses more registers.
+        \item[(d)] How does the mapping of unoptimized code to C differ from the optimized code?
+
+        The unoptimized code is "stripes", and the optimized code is "blocks".
+        This means the unoptimized code would translate the C code to assembly code line by line, while the optimized code would "think" together within lines.
+        \item[(e)] Based on the above, what are some general strategies you suspect the optimizer takes to improve performance?
+
+        Use less instructions, less memory accesses, use more registers to avoid too many memory accesses, and consider the whole program together to share something in the middle, and the code would be "stripes".
+    \end{enumerate}
+
+
 \end{document}
