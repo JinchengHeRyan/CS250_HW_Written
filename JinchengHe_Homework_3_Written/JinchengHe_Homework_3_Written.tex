@@ -51,4 +51,51 @@
     \maketitle
 
 
+    \section{Q1 Boolean Algebra}
+    \begin{enumerate}
+        \item[(a)] Write a truth table for the followgin function: $\text{Output} = \left( \left( !A + !B \right)\cdot !C \right) + \left( \left( A\cdot !B \right) + \left( !C\cdot B \right) \right)$.
+
+        The result is as table~\ref{tab:Q1a_tt}.
+        \begin{table}[!htbp]
+            \centering
+            \begin{tabular}{cccc}
+                \toprule
+                A & B & C & Output \\
+                \midrule
+                0 & 0 & 0 & 1      \\
+                0 & 0 & 1 & 0      \\
+                0 & 1 & 0 & 1      \\
+                1 & 0 & 0 & 1      \\
+                1 & 1 & 0 & 1      \\
+                1 & 0 & 1 & 1      \\
+                0 & 1 & 1 & 0      \\
+                1 & 1 & 1 & 0      \\
+                \bottomrule
+            \end{tabular}
+            \caption{Q1 (a) truth table.}
+            \label{tab:Q1a_tt}
+        \end{table}
+
+        \item[(c)] Write a sum-of-products Boolean function for both outputs in the following truth table and then minimize them using Boolean logic, de Morgan's laws, etc.
+        $$
+        \begin{aligned}
+            \text{out1} &= \left( A \& !B \& !C \right) | \left( A \& !B \& C \right) | \left( A \& B \& !C \right) \\
+            &= \left( A \& !B \right) | \left( A \& B \& !C \right) \\
+            &= A \& \left( !B | \left( B \& !C \right) \right) \\
+            &= A \& \left( !B \& !C \right) \\
+            &= A \& !\left( B | C \right)
+        \end{aligned}
+        $$
+
+        $$
+        \begin{aligned}
+            \text{out2} &= \left( !A \& !B \& !C \right) | \left( !A \& B \& C \right) | \left( A \& B \& C \right) \\
+            &= \left( !A \& !B \& !C \right) | \left( B \& C \right) \\
+            &= !\left( A|B|C \right) | \left( B \& C \right)
+        \end{aligned}
+        $$
+
+    \end{enumerate}
+
+
 \end{document}
