@@ -147,7 +147,7 @@
         \item[(c)] Write out the logic expressions for your next-state bits as well as the ouputs \textbf{starter\_motor} and \textbf{ignition\_coil}.
         \begin{equation*}
             \begin{aligned}
-                &d_0 = \left( !q_1 \& !q_0 \& \text{In\_SE} \right) | \left( !q_1 \& q_0 \& \left( \text{In\_SE} | !\text{In\_ER} \right) \right) | \left( q_1 \& !q_0 \& \text{In\_SE} \& In\_ER \right) | \left( q_1 \& q_0 \& \left( \text{In\_SE} | \text{In\_ER} \right) \right) \\
+                &d_0 = \left( !q_1 \& !q_0 \& \text{In\_SE} \right) | \left( !q_1 \& q_0 \& \left( \text{In\_SE} | !\text{In\_ER} \right) \right) | \left( q_1 \& !q_0 \& \text{In\_SE} \& \text{In\_ER} \right) | \left( q_1 \& q_0 \& \left( \text{In\_SE} | \text{In\_ER} \right) \right) \\
                 &d_1 = \left( !q_1 \& q_0 \& !\text{In\_SE} \& \text{In\_ER} \right) | \left( q_1 \& !q_0 \& \text{In\_ER} \right) | \left( q_1 \& q_0 \& \left( \text{In\_SE} | \text{In\_ER} \right) \right)
             \end{aligned}
         \end{equation*}
