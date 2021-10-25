@@ -98,4 +98,59 @@
     \end{enumerate}
 
 
+    \section{Q3 Finite State Machine}
+    \begin{enumerate}
+        \item[(a)] Draw a state transition diagram, where each state has a unique identifier that is a string of bits as well as the associated value for output \textbf{starter\_motor} and \textbf{ignition\_coil}. Label all of the arcs between transitions with the inputs \textbf{start\_engine} and \textbf{engine\_running} that cause those transitions.
+
+        The answer is as figure~\ref{fig:diag}.
+        \begin{figure}[!htbp]
+            \centering
+            \includegraphics[width=0.8\textwidth]{img/diagram.png}
+            \caption{Transition Diagram.}
+            \label{fig:diag}
+        \end{figure}
+
+        \item[(b)] Draw a truth table for the state transition diagram.
+
+        The truth table is as table~\ref{tab:Q3btruth_table}.
+        \begin{table}
+            \centering
+            \begin{tabular}{cccccccc}
+                \toprule
+                $q_1$ & $q_0$ & out\_SM & out\_IC & In\_SE & In\_ER & $d_1$ & $d_0$ \\
+                \midrule
+                0     & 0     & 0       & 0       & 1      & 0      & 0     & 1     \\
+                0     & 0     & 0       & 0       & 1      & 1      & 0     & 1     \\
+                0     & 0     & 0       & 0       & 0      & 0      & 0     & 0     \\
+                0     & 0     & 0       & 0       & 0      & 1      & 0     & 0     \\
+                \midrule
+                0     & 1     & 1       & 1       & 0      & 0      & 0     & 1     \\
+                0     & 1     & 1       & 1       & 1      & 0      & 0     & 1     \\
+                0     & 1     & 1       & 1       & 1      & 1      & 0     & 1     \\
+                0     & 1     & 1       & 1       & 0      & 1      & 1     & 0     \\
+                \midrule
+                1     & 0     & 0       & 1       & 0      & 1      & 1     & 0     \\
+                1     & 0     & 0       & 1       & 1      & 1      & 1     & 1     \\
+                1     & 0     & 0       & 1       & 0      & 0      & 0     & 0     \\
+                1     & 0     & 0       & 1       & 1      & 0      & 0     & 0     \\
+                \midrule
+                1     & 1     & 0       & 0       & 0      & 1      & 1     & 1     \\
+                1     & 1     & 0       & 0       & 1      & 1      & 1     & 1     \\
+                1     & 1     & 0       & 0       & 1      & 0      & 1     & 1     \\
+                1     & 1     & 0       & 0       & 0      & 0      & 0     & 0     \\
+                \bottomrule
+            \end{tabular}
+            \caption{Truth Table for Q3 (b).}
+            \label{tab:Q3btruth_table}
+        \end{table}
+
+        \item[(c)] Write out the logic expressions for your next-state bits as well as the ouputs \textbf{starter\_motor} and \textbf{ignition\_coil}.
+        \begin{equation*}
+            \begin{aligned}
+                &d_0 = \left( !q_1 \& !q_0 \& \text{In\_SE} \right) | \left( !q_1 \& q_0 \& \left( \text{In\_SE} | !\text{In\_ER} \right) \right) | \left( q_1 \& !q_0 \& \text{In\_SE} \& In\_ER \right) | \left( q_1 \& q_0 \& \left( \text{In\_SE} | \text{In\_ER} \right) \right) \\
+                &d_1 = \left( !q_1 \& q_0 \& !\text{In\_SE} \& \text{In\_ER} \right) | \left( q_1 \& !q_0 \& \text{In\_ER} \right) | \left( q_1 \& q_0 \& \left( \text{In\_SE} | \text{In\_ER} \right) \right)
+            \end{aligned}
+        \end{equation*}
+    \end{enumerate}
+
 \end{document}
