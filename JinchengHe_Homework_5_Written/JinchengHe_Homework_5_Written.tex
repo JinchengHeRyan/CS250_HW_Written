@@ -51,4 +51,11 @@
     \maketitle
 
 
+    \section{Q1. Cache policies}
+    \textbf{Why are write-back caches usually also write-allocate?}
+
+    The advantage of write-back caches is when writing to a block for multiple times, it can stay in cache, only need to be written to main memory when it is going to be replaced.
+    So if the block is loaded on a write miss, if there is any subsequent writes, it can still stay in cache instead of going to the main memory, which can save time.
+
+
 \end{document}
