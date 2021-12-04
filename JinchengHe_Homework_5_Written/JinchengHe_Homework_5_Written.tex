@@ -58,4 +58,15 @@
     So if the block is loaded on a write miss, if there is any subsequent writes, it can still stay in cache instead of going to the main memory, which can save time.
 
 
+    \section{Q2. Cache performance}
+    \textbf{Your L1 data cache has an access latency of 1ns, and your L2 cache has an access latency of 10ns. Assume that 90\% of your L1 accesses are hits, and assume that 100\% of your L2 accesses are hits. What is the average memory latency as seen by the processor core?}
+
+    The equation is as the following:
+    \begin{equation*}
+        \text{avg\_time} = 0.9 \times 1\text{ns} + 0.1 \times 1 \times 10\text{ns} = 1.9\text{ns}
+    \end{equation*}
+
+    So the average time is \textbf{1.9 ns}.
+
+
 \end{document}
