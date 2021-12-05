@@ -69,4 +69,30 @@
     So the average time is \textbf{1.9 ns}.
 
 
+    \section{Q3. Virtual memory layout}
+    \textbf{You have a 64-bit machine and you bought 16GB of physical memory. Pages are 256KB.}
+    \begin{enumerate}
+        \item[(a)] \textbf{How many virtual pages do you have per process?}
+
+        The answer is as the following:
+        \begin{equation*}
+            \frac{2^{64}}{256\times 2^{10}} = \frac{2^{64}}{2^{18}} = 2^{46}
+        \end{equation*}
+
+        So there should be $2^{46}$ virtual pages.
+
+        \item[(b)] \textbf{How many physical pages do you have?}
+
+        There are in total $16\times 2^{30} = 2^{34}$ Bytes of physical memory. So the number of physical pages is $\frac{2^{34}}{256\times 2^{10}} = 2^{16}$.
+
+        \item[(c)] \textbf{In the translation from a virtual address to a physical address, how manny bits of VPN are you mapping to how many bits of PPN (assuming you have just enough bits in the physical address for the amount of physical RAM present)?}
+
+        Both the physical page offset bits and virtual page offset bits are $\log_2 \left( 256\times 2^{10} \right) = 18$. Since for physical address, it needs 34 bits, so for PPN, it needs $34 - 18 = 16$ bits. For VPN, it needs $64 - 18 = 46$ bits.
+
+        \item[(d)] \textbf{How big does a page table entry (PTE) need to be to hold just a single PPN?}
+
+
+    \end{enumerate}
+
+
 \end{document}
