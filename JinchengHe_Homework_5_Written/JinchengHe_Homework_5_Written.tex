@@ -91,6 +91,19 @@
 
         \item[(d)] \textbf{How big does a page table entry (PTE) need to be to hold just a single PPN?}
 
+        Since each PTE only need to hold just a single PPN. Because there are in total $2^{16}$ physical pages, we for each PTE, it needs 16 bits, which is 2 Bytes.
+
+        \item[(e)] \textbf{How big would a flat page table be for a single process, assuming PTEs are the size computed in part (d)?}
+
+        Since there would be in total $2^{46}$ virtual pages, and for each page, it needs 16 bits, which is 2 Bytes, so it needs $2^{47}$ Bytes, which is 128TB.
+
+        \item[(f)] \textbf{Why does the answer above suggest that a "flat page table" isn't going to work for a 64-bit system like this? Research the concept of a \textit{multi-level page table}, and briefly define it here. Why could such a data structure be much smaller than a flat page table?}
+
+        Using 128 TB to store the page table is unacceptable. Multi-level paging is a paging scheme which consists of two or more levels of page tables in a hierarchical manner. This kind of method can greatly lower the table size. Here is an example. For 2-level page table, if using the first 10 bits to index to the first level page table, and use the second 10 bits to index to the second level page table. In this case, (assume PTE is 4 bytes), the size should be $2^{10}\times 4 + 2^{10}\times 4 = 8\text{KB}$. However, for a flat page table, the size should be $2^{20} \times 4 = 4\text{MB}$, which differs a lot.
+
+        \item[(g)] \textbf{Does a TLB miss always lead to a page fault? Why or why not?}
+
+        No it does not. When there is a TLB miss, it only means that we cannot find the page frame number inside the TLB. Then we should go to the page table to find out, but it does not necessarily lead to a page fault. Page fault means the page accessed by a program is not present in physical memory.
 
     \end{enumerate}
 
